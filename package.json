@@ -1,0 +1,68 @@
+{
+  "name": "crystal-trail",
+  "productName": "晶途拾光",
+  "version": "1.0.0",
+  "description": "晶途拾光 — 8-bit 像素平台解谜（无战斗、无死亡惩罚）",
+  "main": "main.js",
+  "author": {
+    "name": "晶途拾光",
+    "email": "noreply@crystalltrail.local"
+  },
+  "license": "Proprietary",
+  "private": true,
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win nsis --x64",
+    "dist:dir": "electron-builder --win dir --x64"
+  },
+  "devDependencies": {
+    "electron": "33.2.0",
+    "electron-builder": "25.1.8"
+  },
+  "build": {
+    "appId": "com.crystalltrail.game",
+    "productName": "晶途拾光",
+    "copyright": "Copyright © 2026 晶途拾光",
+    "directories": {
+      "output": "../dist",
+      "buildResources": "resources"
+    },
+    "files": [
+      "main.js",
+      "package.json",
+      "web/**/*"
+    ],
+    "compression": "maximum",
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "icon": "resources/icon.ico",
+      "artifactName": "CrystalTrail-Setup-${version}.${ext}",
+      "legalTrademarks": "晶途拾光",
+      "requestedExecutionLevel": "asInvoker"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowElevation": true,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "晶途拾光",
+      "uninstallDisplayName": "晶途拾光",
+      "deleteAppDataOnUninstall": false,
+      "runAfterFinish": true,
+      "installerIcon": "resources/icon.ico",
+      "uninstallerIcon": "resources/icon.ico",
+      "installerHeaderIcon": "resources/icon.ico",
+      "artifactName": "CrystalTrail-Setup-${version}.${ext}",
+      "script": "resources/installer.nsi"
+    }
+  }
+}

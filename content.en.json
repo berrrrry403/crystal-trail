@@ -1,0 +1,1130 @@
+{
+ "crystals": [
+  {
+   "id": "crystal-forest",
+   "name": "Verdant Shard",
+   "desc": "Thin green light in the veins"
+  },
+  {
+   "id": "crystal-amber",
+   "name": "Amber Shard",
+   "desc": "Warm orange in the deep stone"
+  },
+  {
+   "id": "crystal-cloud",
+   "name": "Drift Shard",
+   "desc": "Pale cyan light in the clouds"
+  },
+  {
+   "id": "crystal-water",
+   "name": "Tide Shard",
+   "desc": "Blue light under the water"
+  },
+  {
+   "id": "crystal-star",
+   "name": "Starheart Shard",
+   "desc": "Stardust in a silver core"
+  }
+ ],
+ "marks": [
+  {
+   "id": "mark-forest",
+   "theme": "forest",
+   "name": "Fernshade Mark",
+   "desc": "Leaf light stays on the hand"
+  },
+  {
+   "id": "mark-amber",
+   "theme": "amber",
+   "name": "Amber Mark",
+   "desc": "Stone warmth stays in the hand"
+  },
+  {
+   "id": "mark-cloud",
+   "theme": "cloud",
+   "name": "Cloudstep Mark",
+   "desc": "Wind lifts the coat edge"
+  },
+  {
+   "id": "mark-water",
+   "theme": "water",
+   "name": "Ripple Mark",
+   "desc": "Ripples spread across the palm"
+  },
+  {
+   "id": "mark-star",
+   "theme": "star",
+   "name": "Starscript Mark",
+   "desc": "Thin light under the brow"
+  }
+ ],
+ "intros": [
+  {
+   "theme": "forest",
+   "npc": "云絮信使",
+   "intro": "Mosslit Wood begins at an old boardwalk. Ferns reach under fallen trunks. Mushrooms grow on shaded stone. Where the stream bends, pebbles show."
+  },
+  {
+   "theme": "amber",
+   "npc": "云絮信使",
+   "intro": "Amber Hollow is warmer than outside. Warm crystals sit in the rock. An underground stream slips past the spikes. Drops fall into a shallow pool."
+  },
+  {
+   "theme": "cloud",
+   "npc": "云絮信使",
+   "intro": "Cloudreach steps float in the wind. A broken bridge hangs in the air, its banner pulled straight. Gardens sit on floating islands. Birds pass above."
+  },
+  {
+   "theme": "water",
+   "npc": "云絮信使",
+   "intro": "Lilywater Court is flat. Lilies open on the surface, and lily pads step across. Ripples blur the pavilion's reflection. Coral grows in the shallows."
+  },
+  {
+   "theme": "star",
+   "npc": "云絮信使",
+   "intro": "Starscript Hall is rune tiles and star murals. Crystal pillars drop patches of light on the floor. Bronze rings sit in the stone. Stardust hangs low."
+  }
+ ],
+ "blessings": [
+  {
+   "theme": "forest",
+   "guardian": "石苔长老",
+   "blessing": "When moss grows out of the crack, light rests on the underside of the leaf for a while."
+  },
+  {
+   "theme": "amber",
+   "guardian": "石苔长老",
+   "blessing": "Warmth moves slowly in the cave, and moss in the cracks still remembers the old light."
+  },
+  {
+   "theme": "cloud",
+   "guardian": "云絮信使",
+   "blessing": "The cloud steps hold a foot, and the wind carries light things to the other side."
+  },
+  {
+   "theme": "water",
+   "guardian": "河蚌灵",
+   "blessing": "When the shell opens and closes, the light underwater shifts."
+  },
+  {
+   "theme": "star",
+   "guardian": "石苔长老",
+   "blessing": "Stardust settles lightly, and light patches in the corridor keep a place for each step."
+  }
+ ],
+ "treasures": [
+  {
+   "id": "forest-01-t1",
+   "theme": "forest",
+   "level": "forest-01",
+   "kind": "side",
+   "name": "Fern Tip Dew",
+   "desc": "One drop hangs, not yet fallen",
+   "place": "Left of the walk"
+  },
+  {
+   "id": "forest-01-t2",
+   "theme": "forest",
+   "level": "forest-01",
+   "kind": "side",
+   "name": "Three Mushroom Caps",
+   "desc": "Three caps, edges worn",
+   "place": "Log roots, north"
+  },
+  {
+   "id": "forest-02-t1",
+   "theme": "forest",
+   "level": "forest-02",
+   "kind": "side",
+   "name": "Mossy Stone Lines",
+   "desc": "Fine lines ring the stone",
+   "place": "Third creek rock"
+  },
+  {
+   "id": "forest-02-t2",
+   "theme": "forest",
+   "level": "forest-02",
+   "kind": "side",
+   "name": "Rings in Fallen Wood",
+   "desc": "Pale brown rings gone dark",
+   "place": "Fallen log end"
+  },
+  {
+   "id": "forest-03-t1",
+   "theme": "forest",
+   "level": "forest-03",
+   "kind": "side",
+   "name": "Dandelion Down",
+   "desc": "White down parted by wind",
+   "place": "Dandelion patch"
+  },
+  {
+   "id": "forest-03-t2",
+   "theme": "forest",
+   "level": "forest-03",
+   "kind": "side",
+   "name": "Butterfly Wing Dust",
+   "desc": "Fine pale dust on the wing",
+   "place": "Above the rail"
+  },
+  {
+   "id": "forest-04-t1",
+   "theme": "forest",
+   "level": "forest-04",
+   "kind": "side",
+   "name": "Light in the Hollow",
+   "desc": "A pale glow on the inner wall",
+   "place": "Old tree hollow"
+  },
+  {
+   "id": "forest-04-t2",
+   "theme": "forest",
+   "level": "forest-04",
+   "kind": "side",
+   "name": "Stream Bed Pebbles",
+   "desc": "Worn round and bright by water",
+   "place": "Creek bend"
+  },
+  {
+   "id": "forest-04-t3",
+   "theme": "forest",
+   "level": "forest-04",
+   "kind": "side",
+   "name": "Old Nail Marks",
+   "desc": "Rust dots on the old plank",
+   "place": "Sixth walk plank"
+  },
+  {
+   "id": "forest-05-t1",
+   "theme": "forest",
+   "level": "forest-05",
+   "kind": "side",
+   "name": "Fern Back Spores",
+   "desc": "A row of pale dots underneath",
+   "place": "Deep wood ferns"
+  },
+  {
+   "id": "forest-05-t2",
+   "theme": "forest",
+   "level": "forest-05",
+   "kind": "side",
+   "name": "Canopy Light Patch",
+   "desc": "One bright patch falls through",
+   "place": "Tall fern tops"
+  },
+  {
+   "id": "forest-05-t3",
+   "theme": "forest",
+   "level": "forest-05",
+   "kind": "side",
+   "name": "Creekside Butterfly",
+   "desc": "A pale wing skims the water",
+   "place": "By stone bridge"
+  },
+  {
+   "id": "amber-01-t1",
+   "theme": "amber",
+   "level": "amber-01",
+   "kind": "side",
+   "name": "Amber Mine Lamp",
+   "desc": "Warm light held in the stone",
+   "place": "Cave notch two"
+  },
+  {
+   "id": "amber-01-t2",
+   "theme": "amber",
+   "level": "amber-01",
+   "kind": "side",
+   "name": "Water Bead on Vine",
+   "desc": "A bead at the vine tip, still",
+   "place": "Under cave vines"
+  },
+  {
+   "id": "amber-02-t1",
+   "theme": "amber",
+   "level": "amber-02",
+   "kind": "side",
+   "name": "Sound of the Rill",
+   "desc": "Faint water sound at the base",
+   "place": "Cave stream bend"
+  },
+  {
+   "id": "amber-02-t2",
+   "theme": "amber",
+   "level": "amber-02",
+   "kind": "side",
+   "name": "Crystal Glints",
+   "desc": "Light splits on the facets",
+   "place": "Below roof gems"
+  },
+  {
+   "id": "amber-03-t1",
+   "theme": "amber",
+   "level": "amber-03",
+   "kind": "side",
+   "name": "Water Line on Stone",
+   "desc": "A faint mark on the rock",
+   "place": "Wall seep spot"
+  },
+  {
+   "id": "amber-03-t2",
+   "theme": "amber",
+   "level": "amber-03",
+   "kind": "side",
+   "name": "Flower Underground",
+   "desc": "Heart turned to the ore light",
+   "place": "In spike shadow"
+  },
+  {
+   "id": "amber-04-t1",
+   "theme": "amber",
+   "level": "amber-04",
+   "kind": "side",
+   "name": "Quartz Beads",
+   "desc": "Clear grains on the sand",
+   "place": "Creek bed sand"
+  },
+  {
+   "id": "amber-04-t2",
+   "theme": "amber",
+   "level": "amber-04",
+   "kind": "side",
+   "name": "Spike Tip Drop",
+   "desc": "A bead of water hangs above",
+   "place": "Beneath a spike"
+  },
+  {
+   "id": "amber-04-t3",
+   "theme": "amber",
+   "level": "amber-04",
+   "kind": "side",
+   "name": "Dust on Warm Stone",
+   "desc": "Fine yellow dust on the rock",
+   "place": "Warm cave ledge"
+  },
+  {
+   "id": "amber-05-t1",
+   "theme": "amber",
+   "level": "amber-05",
+   "kind": "side",
+   "name": "Amber Flake",
+   "desc": "Honey light at the flake edge",
+   "place": "East vein crack"
+  },
+  {
+   "id": "amber-05-t2",
+   "theme": "amber",
+   "level": "amber-05",
+   "kind": "side",
+   "name": "Spike Shadow Line",
+   "desc": "A blunt shadow on the floor",
+   "place": "Among the spikes"
+  },
+  {
+   "id": "amber-05-t3",
+   "theme": "amber",
+   "level": "amber-05",
+   "kind": "side",
+   "name": "Cave Stream Lamp",
+   "desc": "Water mirrors the orange wall",
+   "place": "Beneath bridge"
+  },
+  {
+   "id": "cloud-01-t1",
+   "theme": "cloud",
+   "level": "cloud-01",
+   "kind": "side",
+   "name": "Cloud Step Mist",
+   "desc": "White haze floats at the edge",
+   "place": "First cloud step"
+  },
+  {
+   "id": "cloud-01-t2",
+   "theme": "cloud",
+   "level": "cloud-01",
+   "kind": "side",
+   "name": "Bridge Rubble",
+   "desc": "Gray grit at the broken end",
+   "place": "Bridge west end"
+  },
+  {
+   "id": "cloud-02-t1",
+   "theme": "cloud",
+   "level": "cloud-02",
+   "kind": "side",
+   "name": "Banner Cloth Corner",
+   "desc": "Wind pulls the cloth taut",
+   "place": "Top of the mast"
+  },
+  {
+   "id": "cloud-02-t2",
+   "theme": "cloud",
+   "level": "cloud-02",
+   "kind": "side",
+   "name": "Bird Silhouette",
+   "desc": "A far bird slides past clouds",
+   "place": "East railing"
+  },
+  {
+   "id": "cloud-03-t1",
+   "theme": "cloud",
+   "level": "cloud-03",
+   "kind": "side",
+   "name": "Garden in the Air",
+   "desc": "Roots grip thin island soil",
+   "place": "South island bed"
+  },
+  {
+   "id": "cloud-03-t2",
+   "theme": "cloud",
+   "level": "cloud-03",
+   "kind": "side",
+   "name": "Feather in the Wind",
+   "desc": "A white feather turns in wind",
+   "place": "By the wind post"
+  },
+  {
+   "id": "cloud-04-t1",
+   "theme": "cloud",
+   "level": "cloud-04",
+   "kind": "side",
+   "name": "Cloud Layer Break",
+   "desc": "A line of pale blue sky shows",
+   "place": "Second high deck"
+  },
+  {
+   "id": "cloud-04-t2",
+   "theme": "cloud",
+   "level": "cloud-04",
+   "kind": "side",
+   "name": "Island Grass Shoots",
+   "desc": "Wind presses the shoots low",
+   "place": "Small islet edge"
+  },
+  {
+   "id": "cloud-04-t3",
+   "theme": "cloud",
+   "level": "cloud-04",
+   "kind": "side",
+   "name": "Old Crack Patterns",
+   "desc": "Fine white dust in the cracks",
+   "place": "Mid-span crack"
+  },
+  {
+   "id": "cloud-05-t1",
+   "theme": "cloud",
+   "level": "cloud-05",
+   "kind": "side",
+   "name": "Puddle Above Clouds",
+   "desc": "Water holds the moving cloud",
+   "place": "Stone gap puddle"
+  },
+  {
+   "id": "cloud-05-t2",
+   "theme": "cloud",
+   "level": "cloud-05",
+   "kind": "side",
+   "name": "Long Banner Shadow",
+   "desc": "The banner shadow on the step",
+   "place": "West step corner"
+  },
+  {
+   "id": "cloud-05-t3",
+   "theme": "cloud",
+   "level": "cloud-05",
+   "kind": "side",
+   "name": "Fallen Bird Feather",
+   "desc": "Fine down by the quill's edge",
+   "place": "Under the rail"
+  },
+  {
+   "id": "water-01-t1",
+   "theme": "water",
+   "level": "water-01",
+   "kind": "side",
+   "name": "First Water Lily",
+   "desc": "A petal edge still curled",
+   "place": "West lily pool"
+  },
+  {
+   "id": "water-01-t2",
+   "theme": "water",
+   "level": "water-01",
+   "kind": "side",
+   "name": "Dew on the Lily Pad",
+   "desc": "A round bead on the leaf",
+   "place": "Lily pad edge"
+  },
+  {
+   "id": "water-02-t1",
+   "theme": "water",
+   "level": "water-02",
+   "kind": "side",
+   "name": "Inner Shell Light",
+   "desc": "A faint rainbow gloss inside",
+   "place": "Underwater steps"
+  },
+  {
+   "id": "water-02-t2",
+   "theme": "water",
+   "level": "water-02",
+   "kind": "side",
+   "name": "Coral Twigs",
+   "desc": "Branch tips sway in the water",
+   "place": "By the coral bed"
+  },
+  {
+   "id": "water-03-t1",
+   "theme": "water",
+   "level": "water-03",
+   "kind": "side",
+   "name": "Pavilion Reflection",
+   "desc": "Ripples cut the reflection",
+   "place": "Pavilion east"
+  },
+  {
+   "id": "water-03-t2",
+   "theme": "water",
+   "level": "water-03",
+   "kind": "side",
+   "name": "Ripples on the Water",
+   "desc": "A ring of water spreads",
+   "place": "Mid lily pool"
+  },
+  {
+   "id": "water-04-t1",
+   "theme": "water",
+   "level": "water-04",
+   "kind": "side",
+   "name": "Glowing Drift",
+   "desc": "Pale green points in water",
+   "place": "North shallows"
+  },
+  {
+   "id": "water-04-t2",
+   "theme": "water",
+   "level": "water-04",
+   "kind": "side",
+   "name": "Pad Edge Water Line",
+   "desc": "A fine water line on the edge",
+   "place": "Below lily pads"
+  },
+  {
+   "id": "water-04-t3",
+   "theme": "water",
+   "level": "water-04",
+   "kind": "side",
+   "name": "Stone Rail Vapor",
+   "desc": "Thin vapor on the stone rail",
+   "place": "Waterside rail"
+  },
+  {
+   "id": "water-05-t1",
+   "theme": "water",
+   "level": "water-05",
+   "kind": "side",
+   "name": "Pale Yellow Heart",
+   "desc": "A pale center shows inside",
+   "place": "Third lily bloom"
+  },
+  {
+   "id": "water-05-t2",
+   "theme": "water",
+   "level": "water-05",
+   "kind": "side",
+   "name": "Small Coral Hole",
+   "desc": "Small holes hold water light",
+   "place": "Below the coral"
+  },
+  {
+   "id": "water-05-t3",
+   "theme": "water",
+   "level": "water-05",
+   "kind": "side",
+   "name": "Pavilion Eave Drops",
+   "desc": "Drops from the eave fall soft",
+   "place": "Under the eave"
+  },
+  {
+   "id": "star-01-t1",
+   "theme": "star",
+   "level": "star-01",
+   "kind": "side",
+   "name": "Rune Groove",
+   "desc": "Silver dust in the cuts",
+   "place": "First hall tile"
+  },
+  {
+   "id": "star-01-t2",
+   "theme": "star",
+   "level": "star-01",
+   "kind": "side",
+   "name": "Mural Star Dots",
+   "desc": "Small holes line up as stars",
+   "place": "Mural lower edge"
+  },
+  {
+   "id": "star-02-t1",
+   "theme": "star",
+   "level": "star-02",
+   "kind": "side",
+   "name": "Crystal Pillar Light",
+   "desc": "White light bends in the core",
+   "place": "Pillar two, east"
+  },
+  {
+   "id": "star-02-t2",
+   "theme": "star",
+   "level": "star-02",
+   "kind": "side",
+   "name": "Bronze Ring Rust",
+   "desc": "Dark green spots on the ring",
+   "place": "Inner ring notch"
+  },
+  {
+   "id": "star-03-t1",
+   "theme": "star",
+   "level": "star-03",
+   "kind": "side",
+   "name": "Layer of Stardust",
+   "desc": "Gray dust on the stone table",
+   "place": "Hall center slab"
+  },
+  {
+   "id": "star-03-t2",
+   "theme": "star",
+   "level": "star-03",
+   "kind": "side",
+   "name": "Corridor Footfalls",
+   "desc": "Footsteps return from stone",
+   "place": "Hall end corner"
+  },
+  {
+   "id": "star-04-t1",
+   "theme": "star",
+   "level": "star-04",
+   "kind": "side",
+   "name": "Light Patch Edge",
+   "desc": "The round patch edge is soft",
+   "place": "West pillar base"
+  },
+  {
+   "id": "star-04-t2",
+   "theme": "star",
+   "level": "star-04",
+   "kind": "side",
+   "name": "Mural Curve",
+   "desc": "Silver line bends end to end",
+   "place": "Gap under mural"
+  },
+  {
+   "id": "star-04-t3",
+   "theme": "star",
+   "level": "star-04",
+   "kind": "side",
+   "name": "Stone Brick Echo",
+   "desc": "A hollow brick answers back",
+   "place": "Hall brick three"
+  },
+  {
+   "id": "star-05-t1",
+   "theme": "star",
+   "level": "star-05",
+   "kind": "side",
+   "name": "Bronze Ring Glow",
+   "desc": "Light draws a warm ring edge",
+   "place": "East ring notch"
+  },
+  {
+   "id": "star-05-t2",
+   "theme": "star",
+   "level": "star-05",
+   "kind": "side",
+   "name": "Star Map Corner",
+   "desc": "Half a silver track remains",
+   "place": "Map lower corner"
+  },
+  {
+   "id": "star-05-t3",
+   "theme": "star",
+   "level": "star-05",
+   "kind": "side",
+   "name": "Line Between Pillars",
+   "desc": "A thin bright line joins them",
+   "place": "Pillar to pillar"
+  }
+ ],
+ "npcDialogue": [
+  {
+   "theme": "forest",
+   "npc": "林间萤灵",
+   "rounds": [
+    {
+     "lines": [
+      "Water light in the walk seams.",
+      "The fern glows near three lights."
+     ]
+    },
+    {
+     "lines": [
+      "The log's mushrooms are whiter."
+     ]
+    },
+    {
+     "lines": [
+      "The hollow's light looks wrapped.",
+      "Did you hear water under leaves?"
+     ]
+    }
+   ]
+  },
+  {
+   "theme": "forest",
+   "npc": "苔痕向导",
+   "rounds": [
+    {
+     "lines": [
+      "Same path. The moss is thicker.",
+      "One tap tells if a step is loose."
+     ]
+    },
+    {
+     "lines": [
+      "Gate ferns lean toward the water."
+     ]
+    },
+    {
+     "lines": [
+      "Mossy fork stones are drier.",
+      "I rest here. I will still be here."
+     ]
+    }
+   ]
+  },
+  {
+   "theme": "amber",
+   "npc": "石苔长老",
+   "rounds": [
+    {
+     "lines": [
+      "Cave water outlives the stone.",
+      "My moss grows thick while I sit."
+     ]
+    },
+    {
+     "lines": [
+      "Crystal glow shows wall lines."
+     ]
+    },
+    {
+     "lines": [
+      "Amber light is old, still warm.",
+      "Do the drops land in one spot?"
+     ]
+    }
+   ]
+  },
+  {
+   "theme": "amber",
+   "npc": "苔痕向导",
+   "rounds": [
+    {
+     "lines": [
+      "Three ways. Low vines are easier.",
+      "Firm where the stick has tested."
+     ]
+    },
+    {
+     "lines": [
+      "Stream sound is clearer than wind."
+     ]
+    },
+    {
+     "lines": [
+      "Warm stone feels like sunlit wall.",
+      "You came this way for the amber?"
+     ]
+    }
+   ]
+  },
+  {
+   "theme": "cloud",
+   "npc": "云絮信使",
+   "rounds": [
+    {
+     "lines": [
+      "Wind rises through the step gap.",
+      "I stop at that gap on mail runs."
+     ]
+    },
+    {
+     "lines": [
+      "Old rope swings at the bridge end."
+     ]
+    },
+    {
+     "lines": [
+      "Soil is thin, but roots hold on.",
+      "Can you tell a step from a cloud?"
+     ]
+    }
+   ]
+  },
+  {
+   "theme": "cloud",
+   "npc": "苔痕向导",
+   "rounds": [
+    {
+     "lines": [
+      "Steps feel firm but look fragile.",
+      "Light stick. I stow it in wind."
+     ]
+    },
+    {
+     "lines": [
+      "Flowers on the isle grow thicker."
+     ]
+    },
+    {
+     "lines": [
+      "All cloud below; no shadow falls.",
+      "Less wind. The stick lands firm."
+     ]
+    }
+   ]
+  },
+  {
+   "theme": "water",
+   "npc": "河蚌灵",
+   "rounds": [
+    {
+     "lines": [
+      "Ripples reach the edge and ebb.",
+      "I open slowly. The light lags."
+     ]
+    },
+    {
+     "lines": [
+      "Roots in mud. The flower floats."
+     ]
+    },
+    {
+     "lines": [
+      "Reflections break, then close.",
+      "Did you see pale green dots below?"
+     ]
+    }
+   ]
+  },
+  {
+   "theme": "water",
+   "npc": "苔痕向导",
+   "rounds": [
+    {
+     "lines": [
+      "Two sunken steps still sound.",
+      "Stick in water tells the pad edge."
+     ]
+    },
+    {
+     "lines": [
+      "Wood above the water stays dry."
+     ]
+    },
+    {
+     "lines": [
+      "Ripples make the coral below sway.",
+      "Did you hear the eave drops?"
+     ]
+    }
+   ]
+  },
+  {
+   "theme": "star",
+   "npc": "石苔长老",
+   "rounds": [
+    {
+     "lines": [
+      "Silver dust fills the brick seams.",
+      "Sat long. Moss climbs to my knees."
+     ]
+    },
+    {
+     "lines": [
+      "Wall arcs are paler than runes."
+     ]
+    },
+    {
+     "lines": [
+      "Ring turns draw a little wind.",
+      "Did the light patch hold one side?"
+     ]
+    }
+   ]
+  },
+  {
+   "theme": "star",
+   "npc": "苔痕向导",
+   "rounds": [
+    {
+     "lines": [
+      "Wide entrance. Sound thins inside.",
+      "Two taps, and the echoes differ."
+     ]
+    },
+    {
+     "lines": [
+      "Pillar light patches are brighter."
+     ]
+    },
+    {
+     "lines": [
+      "Mural dots break off at the ring.",
+      "Did the tooth turn to the light?"
+     ]
+    }
+   ]
+  }
+ ],
+ "hints": [
+  {
+   "mech": "pressure_switch",
+   "levels": [
+    "The side door light stays dark.",
+    "The lamp lights only under weight.",
+    "Rock on the switch keeps the door up."
+   ]
+  },
+  {
+   "mech": "light_beam",
+   "levels": [
+    "The crystal seat is still dark.",
+    "A mirror block in the beam bends it.",
+    "A mirror turns the beam to the seat."
+   ]
+  },
+  {
+   "mech": "sequence_pads",
+   "levels": [
+    "The tiles by the stone door stay still.",
+    "Three pads take the mural order.",
+    "Three pads in order open the stone door."
+   ]
+  },
+  {
+   "mech": "wind",
+   "levels": [
+    "The next floating platform is far away.",
+    "Side wind pushes the platform forward.",
+    "Wait in the updraft, then jump across."
+   ]
+  },
+  {
+   "mech": "water_flow",
+   "levels": [
+    "The platform ahead has not risen.",
+    "The wheel can turn the flow another way.",
+    "Gate open, water rises, platform floats."
+   ]
+  },
+  {
+   "mech": "rune_puzzle",
+   "levels": [
+    "The frame pattern still lacks a corner.",
+    "Pieces lie in the hall and wall niches.",
+    "Three pieces make the frame whole again."
+   ]
+  }
+ ],
+ "glossary": [
+  {
+   "key": "hud_treasure",
+   "name": "Treasure Count",
+   "desc": "Top right: whole-run progress"
+  },
+  {
+   "key": "treasure",
+   "name": "Treasure",
+   "desc": "Codex entry, not needed to pass"
+  },
+  {
+   "key": "crystal",
+   "name": "Source Crystal",
+   "desc": "One per theme; proof of clearing"
+  },
+  {
+   "key": "mark",
+   "name": "Guardian Mark",
+   "desc": "Shows after a guardian's request"
+  },
+  {
+   "key": "rune",
+   "name": "Rune Piece",
+   "desc": "Three pieces, then the rune altar"
+  },
+  {
+   "key": "checkpoint",
+   "name": "Save Stone",
+   "desc": "Stopping beside it saves progress"
+  },
+  {
+   "key": "exit",
+   "name": "Exit Gate",
+   "desc": "Passing through clears the level"
+  },
+  {
+   "key": "door",
+   "name": "Stone Door",
+   "desc": "Opens once the mechanism is on"
+  },
+  {
+   "key": "boulder",
+   "name": "Rolling Stone",
+   "desc": "Rolls and a touch costs a life"
+  },
+  {
+   "key": "pressure_switch",
+   "name": "Pressure Plate",
+   "desc": "Live underfoot, off when left"
+  },
+  {
+   "key": "light_beam",
+   "name": "Mirror Block",
+   "desc": "Block in the beam turns the light"
+  },
+  {
+   "key": "sequence_pads",
+   "name": "Sequence Pads",
+   "desc": "Order matters; the wall shows it"
+  },
+  {
+   "key": "wind",
+   "name": "Updraft",
+   "desc": "Rising air holds him up"
+  },
+  {
+   "key": "water_flow",
+   "name": "Sluice Gate",
+   "desc": "Rising water lifts the platform"
+  },
+  {
+   "key": "rune_altar",
+   "name": "Rune Altar",
+   "desc": "The three pieces join here"
+  },
+  {
+   "key": "npc",
+   "name": "Traveler",
+   "desc": "Nearby, interact starts a talk"
+  }
+ ],
+ "gallery": [
+  {
+   "theme": "forest",
+   "crystal": "翠源晶",
+   "title": "First Road in Rain",
+   "caption": "Rain on his hood. Dry crust in the satchel. The boardwalk is long. He does not look back."
+  },
+  {
+   "theme": "amber",
+   "crystal": "暖珀晶",
+   "title": "Sitting in the Dark",
+   "caption": "He learns to sit in the dark and count time by drops until light reaches his feet."
+  },
+  {
+   "theme": "cloud",
+   "crystal": "流云晶",
+   "title": "Lifted by the Wind",
+   "caption": "The wind lifts him off the ground. He sees the landing place ahead, not underfoot."
+  },
+  {
+   "theme": "water",
+   "crystal": "澜光晶",
+   "title": "Water to the Knees",
+   "caption": "Water to the knees. No way back. He lifts the satchel and walks toward the louder water."
+  },
+  {
+   "theme": "star",
+   "crystal": "星核晶",
+   "title": "One Line of Light",
+   "caption": "Five crystals make one line. The Stillwater Veil never stopped him. It only slowed him."
+  }
+ ],
+ "story": "He left with nothing, wanting to see the far side. Rain on his hood, one dry crust. In the caves he learned to wait; in the wind, to trust his eyes; in the water, to let the way back go; in the hall, to look behind. When five crystals made one line he understood: the Stillwater Veil was never a wall, only a reason to finish the walk. The far side was not as he imagined. It was a little brighter.",
+ "ui": {
+  "app_title": "Crystal Trail",
+  "app_subtitle": "CRYSTAL TRAIL",
+  "menu_new": "New Journey",
+  "menu_continue": "Continue",
+  "menu_codex": "Codex",
+  "menu_settings": "Settings",
+  "menu_hint_keys": "Arrows select, Space or E confirms",
+  "menu_hint_tagline": "No combat. No death penalty.",
+  "slot_title_new": "Choose a Slot",
+  "slot_title_load": "Continue Journey",
+  "slot_name": "Save",
+  "slot_auto": "Auto Save",
+  "slot_empty": "Empty Slot",
+  "slot_unknown": "Unknown",
+  "slot_collect": "Collected",
+  "slot_hint": "Space or E confirm, Esc goes back",
+  "name_title": "Name the Lightgatherer",
+  "name_hint": "Type freely, Enter to confirm",
+  "name_random": "Random",
+  "name_confirm": "Done",
+  "name_back": "Back",
+  "name_empty": "No name yet",
+  "pause_title": "Paused",
+  "pause_resume": "Resume",
+  "pause_codex": "Codex",
+  "pause_title_screen": "Title Screen",
+  "pause_progress": "Completion",
+  "settings_title": "Settings",
+  "settings_bgm": "Music Volume",
+  "settings_sfx": "SFX Volume",
+  "settings_mute_bgm": "Mute Music",
+  "settings_mute_sfx": "Mute SFX",
+  "settings_touch": "Touch Layout",
+  "settings_lang": "Language",
+  "settings_back": "Back",
+  "settings_hint": "Arrows adjust, Space toggle, Esc",
+  "on": "On",
+  "off": "Off",
+  "codex_title": "Codex",
+  "codex_crystals": "Source Crystals",
+  "codex_marks": "Guardian Marks",
+  "codex_unknown": "???",
+  "codex_not_found": "Not found yet",
+  "codex_percent": "Completion",
+  "codex_hint": "Arrows flip pages, Esc to go back",
+  "codex_gallery": "Journey Photos",
+  "codex_gallery_locked": "Needs one crystal",
+  "codex_gallery_prev": "Previous",
+  "codex_gallery_next": "Next",
+  "codex_story_title": "The Whole Story",
+  "codex_story_locked": "Needs five crystals",
+  "clear_title": "Level Clear",
+  "clear_collect": "Collected",
+  "clear_next": "Space continues",
+  "clear_end": "Space to see the end",
+  "ending_title": "End of the Walk",
+  "ending_hint": "Space returns to title",
+  "hud_crystal": "Crystal",
+  "msg_found": "Found",
+  "msg_got_crystal": "Got",
+  "msg_saved": "Progress saved",
+  "msg_checkpoint": "Marked at the stone",
+  "msg_lives_out": "No strength, restart",
+  "msg_rune_done": "Rune pieces joined",
+  "msg_rune_need": "Still missing",
+  "msg_rune_have": "Runes already joined",
+  "msg_hint_title": "Hint",
+  "tut_move": "Left or right to walk",
+  "tut_jump": "Space to jump",
+  "tut_jump_high": "Hold space for height",
+  "tut_drop": "Down to drop through",
+  "tut_interact": "Press E to talk",
+  "tut_done": "Tutorial done, walk on",
+  "tut_prompt": "Use the hints"
+ }
+}
