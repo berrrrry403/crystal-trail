@@ -1,4 +1,4 @@
-﻿/* 晶途拾光 — 游戏主逻辑
+/* 晶途拾光 — 游戏主逻辑
  * --------------------------------------------------------------------------
  * 串起全部子系统：状态机（标题 / 存档槽 / 游戏中 / 暂停 / 图鉴 / 设置 /
  * 结算）、世界渲染顺序、交互与收集、快速复位、关卡流转。
@@ -24,6 +24,12 @@
     VW = CT.View.VW;
     VH = CT.View.VH;
   }
+
+  // 界面排版一直按 480×270 这块「设计板」排。逻辑分辨率现在会随窗口变大，
+  // 如果把板子还钉在左上角，宽窗口下所有界面都会偏到左上。
+  // 这两个偏移把整块板挪到画布正中，元素坐标一个都不用改。
+  function boardX() { return Math.round((VW - 480) / 2); }
+  function boardY() { return Math.round((VH - 270) / 2); }
   var TS = 16;
 
   var STATE = {
@@ -468,7 +474,7 @@
     var fb = this.fb, P = this.P;
     var w = Math.max(CT.Font.measure(g.name), CT.Font.measure(g.desc)) + 18;
     var x = Math.round((VW - w) / 2);
-    var y = 42;
+    var y = 42 + boardY();
     // 最后 0.6 秒用抖动淡出，保持调色板纯净
     var lv = g.t < 0.6 ? Math.max(1, Math.round((g.t / 0.6) * 16)) : 16;
     fb.fillRectDither(x, y, w, 30, gc(G.PANEL), lv);
@@ -1113,19 +1119,26 @@
     CT.BG.drawLayer(fb, CT.BG.build('forest').mid, this.time * 14, false);
     CT.BG.drawLayer(fb, CT.BG.build('forest').near, this.time * 22, true);
 
+    var BX = boardX(), BY = boardY();
     // 标题字
     var t1 = T('晶途拾光');
-    var scale = 2;
-    drawBigText(fb, t1, VW / 2, 40, this.P.c[14], null, 2);
-    CT.Font.drawCentered(fb, 'C R Y S T A L   T R A I L', VW / 2, 84, P.c[3], { outline: gc(G.OUTLINE) });
+    drawBigText(fb, t1, VW / 2, 40 + BY, this.P.c[14], null, 2);
+    // 副标题在树冠前基本看不见（1px 亮的细笔画压在中间调绿上），
+    // 给它一条深色底衬，位置也就顺势贴在主菜单面板上沿。
+    var sub = 'C R Y S T A L   T R A I L';
+    var subW = CT.Font.measure(sub);
+    var subX = Math.round((VW - subW) / 2), subY = 84 + BY;
+    fb.fillRect(subX - 6, subY - 2, subW + 12, 14, gc(G.PANEL_LO));
+    fb.rect(subX - 6, subY - 2, subW + 12, 14, gc(G.PANEL_HI));
+    CT.Font.draw(fb, sub, subX, subY, P.c[15], { outline: gc(G.OUTLINE) });
 
-    CT.UI.panel(fb, 150, 104, 180, 96, P, P.c[15]);
+    CT.UI.panel(fb, 150 + BX, 104 + BY, 180, 96, P, P.c[15]);
     var items = [T('开始新的旅程'), T('继续旅程'), T('图鉴'), T('设置')];
     for (var i = 0; i < items.length; i++) {
-      CT.UI.menuItem(fb, items[i], 190, 118 + i * 20, i === this.titleIndex, P, this.time);
+      CT.UI.menuItem(fb, items[i], 190 + BX, 118 + BY + i * 20, i === this.titleIndex, P, this.time);
     }
-    CT.Font.drawCentered(fb, T('方向键选择 · 空格或 E 确认'), VW / 2, 228, gc(G.TEXT), { outline: gc(G.OUTLINE) });
-    CT.Font.drawCentered(fb, T('全程无战斗 · 无死亡惩罚'), VW / 2, 250, P.c[4], { outline: gc(G.OUTLINE) });
+    CT.Font.drawCentered(fb, T('方向键选择 · 空格或 E 确认'), VW / 2, 228 + BY, gc(G.TEXT), { outline: gc(G.OUTLINE) });
+    CT.Font.drawCentered(fb, T('全程无战斗 · 无死亡惩罚'), VW / 2, 250 + BY, P.c[4], { outline: gc(G.OUTLINE) });
   };
 
   function drawBigText(fb, text, cx, y, color, outline, scale) {
@@ -1146,45 +1159,47 @@
   Game.prototype.renderSlots = function () {
     var fb = this.fb;
     var P = this.P;
-    fb.clear(gc(G.PANEL));
-    CT.BG.drawSky(fb, CT.BG.build('forest').sky);
-    fb.fillRectDither(0, 0, VW, VH, gc(G.PANEL), 12);
-    CT.UI.title(fb, this.slotMode === 'new' ? T('选择存档位') : T('继续旅程'), VW / 2, 14, P);
+    // 纯色背景。抖动渐变在 480 宽的画布上还行，铺到 749 宽以后
+    // 低级别抖动就是一整屏点阵噪点，所以菜单统一用实色。
+    fb.fillRect(0, 0, VW, VH, gc(G.PANEL));
+    var BX = boardX(), BY = boardY();
+    CT.UI.title(fb, this.slotMode === 'new' ? T('选择存档位') : T('继续旅程'), VW / 2, 14 + BY, P);
     var list = CT.Save.list();
     for (var i = 0; i < list.length; i++) {
       var s = list[i];
-      var y = 44 + i * 44;
+      var y = 44 + BY + i * 44;
       var sel = i === this.slotIndex;
-      CT.UI.panel(fb, 92, y, 296, 38, P, sel ? P.c[15] : P.c[7]);
+      CT.UI.panel(fb, 92 + BX, y, 296, 38, P, sel ? P.c[15] : P.c[7]);
       var label = i < 3 ? (T('存档 ') + (i + 1)) : T('自动存档');
-      CT.Font.draw(fb, label, 104, y + 6, sel ? P.c[0] : gc(G.TEXT_DIM), { outline: gc(G.OUTLINE) });
+      CT.Font.draw(fb, label, 104 + BX, y + 6, sel ? P.c[0] : gc(G.TEXT_DIM), { outline: gc(G.OUTLINE) });
       if (s) {
         var li = CT.Themes.levelInfo(s.level || 'forest-01');
         var comp = CT.Save.completion(s);
-        CT.Font.draw(fb, (li ? li.theme.name + ' · ' + li.name : T('未知')), 104, y + 21, gc(G.TEXT), { outline: gc(G.OUTLINE) });
-        CT.Font.draw(fb, T('收集 ') + comp.pct + '%', 300, y + 21, P.c[15], { outline: gc(G.OUTLINE) });
+        CT.Font.draw(fb, (li ? li.theme.name + ' · ' + li.name : T('未知')), 104 + BX, y + 21, gc(G.TEXT), { outline: gc(G.OUTLINE) });
+        CT.Font.draw(fb, T('收集 ') + comp.pct + '%', 300 + BX, y + 21, P.c[15], { outline: gc(G.OUTLINE) });
       } else {
-        CT.Font.draw(fb, T('空存档'), 104, y + 21, gc(G.TEXT_DIM), { outline: gc(G.OUTLINE) });
+        CT.Font.draw(fb, T('空存档'), 104 + BX, y + 21, gc(G.TEXT_DIM), { outline: gc(G.OUTLINE) });
       }
       if (sel) {
-        fb.rect(92, y, 296, 38, P.c[15]);
+        fb.rect(92 + BX, y, 296, 38, P.c[15]);
       }
     }
-    CT.Font.drawCentered(fb, T('空格 / E 确认 · Esc 返回'), VW / 2, 240, gc(G.TEXT_DIM), { outline: gc(G.OUTLINE) });
+    CT.Font.drawCentered(fb, T('空格 / E 确认 · Esc 返回'), VW / 2, 240 + BY, gc(G.TEXT_DIM), { outline: gc(G.OUTLINE) });
   };
 
   Game.prototype.renderPause = function () {
     var fb = this.fb;
     var P = this.P;
-    fb.fillRectDither(0, 0, VW, VH, gc(G.PANEL), 10);
-    CT.UI.panel(fb, 160, 78, 160, 108, P, P.c[15]);
-    CT.UI.title(fb, T('暂停'), VW / 2, 84, P);
+    var BX = boardX(), BY = boardY();
+    fb.fillRectDither(0, 0, VW, VH, gc(G.PANEL), 14);
+    CT.UI.panel(fb, 160 + BX, 78 + BY, 160, 108, P, P.c[15]);
+    CT.UI.title(fb, T('暂停'), VW / 2, 84 + BY, P);
     var items = [T('继续'), T('图鉴'), T('返回标题')];
     for (var i = 0; i < items.length; i++) {
-      CT.UI.menuItem(fb, items[i], 200, 112 + i * 20, i === this.pauseIndex, P, this.time);
+      CT.UI.menuItem(fb, items[i], 200 + BX, 112 + BY + i * 20, i === this.pauseIndex, P, this.time);
     }
     var comp = CT.Save.completion({ collected: this.collected });
-    CT.Font.drawCentered(fb, T('收集完成度 ') + comp.pct + '%', VW / 2, 168, P.c[15], { outline: gc(G.OUTLINE) });
+    CT.Font.drawCentered(fb, T('收集完成度 ') + comp.pct + '%', VW / 2, 168 + BY, P.c[15], { outline: gc(G.OUTLINE) });
   };
 
   Game.prototype.renderCodex = function () {
@@ -1197,7 +1212,8 @@
     var C = CT.DATA.content;
     var themes = CT.Themes.LIST;
     var page = this.codexPage;
-    var y0 = 34;
+    var BX = boardX(), BY = boardY();
+    var y0 = 34 + BY;
 
     // ---- 旅途留影（第 6~10 页）：每枚彩晶解锁一张插画
     if (page >= 6 && page <= 10) {
@@ -1207,10 +1223,10 @@
       // themes.LIST[].crystal 存的已经是彩晶 id（如 crystal-forest）
       var crystalId = gth.crystal;
       var unlocked = !!(this.save && this.save.crystals && crystalId && this.save.crystals[crystalId]);
-      CT.Font.draw(fb, T('旅途留影') + '  ' + (gi + 1) + '/5', VW / 2 - 40, 30, P.c[15], { outline: gc(G.OUTLINE) });
+      CT.Font.draw(fb, T('旅途留影') + '  ' + (gi + 1) + '/5', VW / 2 - 40, 30 + BY, P.c[15], { outline: gc(G.OUTLINE) });
       if (unlocked) {
         var ill = CT.Illustration.build(gth.key);
-        var ix = Math.round((VW - ill.w) / 2), iy = 46;
+        var ix = Math.round((VW - ill.w) / 2), iy = 46 + BY;
         fb.blitOpaque(ill.d, ill.w, ill.h, ix, iy);
         fb.rect(ix - 1, iy - 1, ill.w + 2, ill.h + 2, CT.Palette.get(gth.key).c[11]);
         if (gdata) {
@@ -1225,19 +1241,19 @@
       } else {
         // 未解锁：画一个暗色框，提示取得彩晶
         var bw2 = 192, bh2 = 128;
-        var bx2 = Math.round((VW - bw2) / 2), by2 = 52;
+        var bx2 = Math.round((VW - bw2) / 2), by2 = 52 + BY;
         fb.fillRect(bx2, by2, bw2, bh2, gc(G.PANEL_LO));
         fb.rect(bx2, by2, bw2, bh2, gc(G.PANEL_HI));
         CT.Font.drawCentered(fb, T('？？？'), VW / 2, by2 + 58, gc(G.TEXT_DIM), { outline: gc(G.OUTLINE) });
         CT.Font.drawCentered(fb, T('取得本源彩晶后解锁'), VW / 2, by2 + 78, P.c[4], { outline: gc(G.OUTLINE) });
       }
-      CT.Font.drawCentered(fb, T('←→ 翻页 · Esc 返回'), VW / 2, 252, gc(G.TEXT_DIM), { outline: gc(G.OUTLINE) });
+      CT.Font.drawCentered(fb, T('←→ 翻页 · Esc 返回'), VW / 2, 252 + BY, gc(G.TEXT_DIM), { outline: gc(G.OUTLINE) });
       return;
     }
 
     // ---- 故事页（第 11 页）：五枚彩晶齐了才讲完
     if (page === 11) {
-      CT.UI.title(fb, T('完整的故事'), VW / 2, 10, P);
+      CT.UI.title(fb, T('完整的故事'), VW / 2, 10 + BY, P);
       var allCrystals = 0;
       for (var ci = 0; ci < C.crystals.length; ci++) {
         if (this.save && this.save.crystals && this.save.crystals[C.crystals[ci].id]) allCrystals++;
@@ -1245,13 +1261,13 @@
       if (allCrystals >= 5 && C.story) {
         var slines = CT.Font.wrap(C.story, VW - 60, 12);
         for (var si = 0; si < slines.length; si++) {
-          CT.Font.drawCentered(fb, slines[si], VW / 2, 40 + si * 16, gc(G.TEXT), { outline: gc(G.OUTLINE) });
+          CT.Font.drawCentered(fb, slines[si], VW / 2, 40 + BY + si * 16, gc(G.TEXT), { outline: gc(G.OUTLINE) });
         }
       } else {
-        CT.Font.drawCentered(fb, T('集齐五枚彩晶') + ' (' + allCrystals + '/5)', VW / 2, 120, P.c[15], { outline: gc(G.OUTLINE) });
-        CT.Font.drawCentered(fb, T('故事才会讲完'), VW / 2, 138, gc(G.TEXT_DIM), { outline: gc(G.OUTLINE) });
+        CT.Font.drawCentered(fb, T('集齐五枚彩晶') + ' (' + allCrystals + '/5)', VW / 2, 120 + BY, P.c[15], { outline: gc(G.OUTLINE) });
+        CT.Font.drawCentered(fb, T('故事才会讲完'), VW / 2, 138 + BY, gc(G.TEXT_DIM), { outline: gc(G.OUTLINE) });
       }
-      CT.Font.drawCentered(fb, T('←→ 翻页 · Esc 返回'), VW / 2, 252, gc(G.TEXT_DIM), { outline: gc(G.OUTLINE) });
+      CT.Font.drawCentered(fb, T('←→ 翻页 · Esc 返回'), VW / 2, 252 + BY, gc(G.TEXT_DIM), { outline: gc(G.OUTLINE) });
       return;
     }
 
@@ -1259,49 +1275,50 @@
       var th = themes[page];
       var TP = CT.Palette.get(th.key);
       var list = C.treasures.filter(function (t) { return t.theme === th.key; });
-      CT.Font.draw(fb, th.name, 10, y0, TP.c[15], { outline: gc(G.OUTLINE) });
+      CT.Font.draw(fb, th.name, 10 + BX, y0, TP.c[15], { outline: gc(G.OUTLINE) });
       var got = 0;
       for (var i = 0; i < list.length; i++) if (this.collected[list[i].id]) got++;
-      CT.Font.draw(fb, got + '/' + list.length, 300, y0, gc(G.TEXT), { outline: gc(G.OUTLINE) });
+      CT.Font.draw(fb, got + '/' + list.length, 300 + BX, y0, gc(G.TEXT), { outline: gc(G.OUTLINE) });
       for (var r = 0; r < Math.min(8, list.length); r++) {
         var t = list[r];
         var yy = y0 + 16 + r * 26;
         var have = !!this.collected[t.id];
-        CT.Font.draw(fb, have ? t.name : '？？？', 14, yy, have ? gc(G.TEXT) : gc(G.TEXT_DIM), { outline: gc(G.OUTLINE) });
+        CT.Font.draw(fb, have ? t.name : '？？？', 14 + BX, yy, have ? gc(G.TEXT) : gc(G.TEXT_DIM), { outline: gc(G.OUTLINE) });
         if (have) {
-          CT.Font.draw(fb, t.desc, 14, yy + 12, gc(G.TEXT_DIM), { outline: gc(G.OUTLINE) });
-          CT.Font.draw(fb, t.place, 250, yy + 12, TP.c[4], { outline: gc(G.OUTLINE) });
+          CT.Font.draw(fb, t.desc, 14 + BX, yy + 12, gc(G.TEXT_DIM), { outline: gc(G.OUTLINE) });
+          CT.Font.draw(fb, t.place, 250 + BX, yy + 12, TP.c[4], { outline: gc(G.OUTLINE) });
           var d = this.collected[t.id];
           if (typeof d === 'string') CT.Font.drawRight(fb, d, 470, yy, TP.c[7], { outline: gc(G.OUTLINE) });
         } else {
-          CT.Font.draw(fb, T('尚未寻得'), 14, yy + 12, gc(G.TEXT_DIM), { outline: gc(G.OUTLINE) });
+          CT.Font.draw(fb, T('尚未寻得'), 14 + BX, yy + 12, gc(G.TEXT_DIM), { outline: gc(G.OUTLINE) });
         }
       }
     } else if (page === 5) {
       // 总览页：五枚彩晶与五枚守护印记
-      CT.Font.draw(fb, T('本源彩晶'), 10, y0, P.c[15], { outline: gc(G.OUTLINE) });
+      CT.Font.draw(fb, T('本源彩晶'), 10 + BX, y0, P.c[15], { outline: gc(G.OUTLINE) });
       for (var k = 0; k < C.crystals.length; k++) {
         var c = C.crystals[k];
         var own = this.save && this.save.crystals && this.save.crystals[c.id];
-        CT.Font.draw(fb, own ? c.name : '？？？', 16 + k * 90, y0 + 18, own ? P.c[0] : gc(G.TEXT_DIM), { outline: gc(G.OUTLINE) });
+        CT.Font.draw(fb, own ? c.name : '？？？', 16 + BX + k * 90, y0 + 18, own ? P.c[0] : gc(G.TEXT_DIM), { outline: gc(G.OUTLINE) });
       }
-      CT.Font.draw(fb, T('守护印记'), 10, y0 + 42, P.c[15], { outline: gc(G.OUTLINE) });
+      CT.Font.draw(fb, T('守护印记'), 10 + BX, y0 + 42, P.c[15], { outline: gc(G.OUTLINE) });
       for (var m = 0; m < C.marks.length; m++) {
         var mk = C.marks[m];
         var ownM = this.save && this.save.marks && this.save.marks[mk.id];
-        CT.Font.draw(fb, ownM ? mk.name : '？？？', 16 + m * 90, y0 + 60, ownM ? P.c[0] : gc(G.TEXT_DIM), { outline: gc(G.OUTLINE) });
+        CT.Font.draw(fb, ownM ? mk.name : '？？？', 16 + BX + m * 90, y0 + 60, ownM ? P.c[0] : gc(G.TEXT_DIM), { outline: gc(G.OUTLINE) });
       }
     }
     var comp = CT.Save.completion({ collected: this.collected });
-    CT.Font.drawCentered(fb, T('收集完成度 ') + comp.pct + T('%   ←→ 翻页  Esc 返回'), VW / 2, 252, gc(G.TEXT_DIM), { outline: gc(G.OUTLINE) });
+    CT.Font.drawCentered(fb, T('收集完成度 ') + comp.pct + T('%   ←→ 翻页  Esc 返回'), VW / 2, 252 + BY, gc(G.TEXT_DIM), { outline: gc(G.OUTLINE) });
   };
 
   Game.prototype.renderSettings = function () {
     var fb = this.fb;
     var P = this.P;
     fb.fillRect(0, 0, VW, VH, gc(G.PANEL));
-    CT.UI.title(fb, T('设置'), VW / 2, 20, P);
-    CT.UI.panel(fb, 72, 44, 336, 184, P, P.c[15]);
+    var BX = boardX(), BY = boardY();
+    CT.UI.title(fb, T('设置'), VW / 2, 20 + BY, P);
+    CT.UI.panel(fb, 72 + BX, 44 + BY, 336, 184, P, P.c[15]);
     var s = this.save ? this.save.settings : { bgm: 70, sfx: 80, touchLayout: this.layoutIdx };
     if (s.muteBgm === undefined) s.muteBgm = false;
     if (s.muteSfx === undefined) s.muteSfx = false;
@@ -1317,35 +1334,36 @@
     ];
     for (var i = 0; i < rows.length; i++) {
       var sel = i === this.settingsIndex;
-      var ry = 60 + i * 22;
-      CT.UI.menuItem(fb, rows[i][0], 116, ry, sel, P, this.time);
-      if (rows[i][1]) CT.Font.drawRight(fb, rows[i][1], 364, ry, sel ? P.c[0] : gc(G.TEXT_DIM), { outline: gc(G.OUTLINE) });
+      var ry = 60 + BY + i * 22;
+      CT.UI.menuItem(fb, rows[i][0], 116 + BX, ry, sel, P, this.time);
+      if (rows[i][1]) CT.Font.drawRight(fb, rows[i][1], 364 + BX, ry, sel ? P.c[0] : gc(G.TEXT_DIM), { outline: gc(G.OUTLINE) });
     }
-    CT.Font.drawCentered(fb, T('←→ 调整 · Esc 返回'), VW / 2, 226, gc(G.TEXT_DIM), { outline: gc(G.OUTLINE) });
+    CT.Font.drawCentered(fb, T('←→ 调整 · Esc 返回'), VW / 2, 240 + BY, gc(G.TEXT_DIM), { outline: gc(G.OUTLINE) });
   };
 
   Game.prototype.renderClear = function () {
     var fb = this.fb;
     var P = this.P;
-    fb.fillRectDither(0, 0, VW, VH, gc(G.PANEL), 12);
-    CT.UI.panel(fb, 100, 60, 280, 150, P, P.c[15]);
-    CT.UI.title(fb, this.clearTitle || T('关卡完成'), VW / 2, 66, P);
+    var BX = boardX(), BY = boardY();
+    fb.fillRectDither(0, 0, VW, VH, gc(G.PANEL), 14);
+    CT.UI.panel(fb, 100 + BX, 60 + BY, 280, 150, P, P.c[15]);
+    CT.UI.title(fb, this.clearTitle || T('关卡完成'), VW / 2, 66 + BY, P);
     var comp = CT.Save.completion({ collected: this.collected });
-    CT.Font.drawCentered(fb, T('收集 ') + comp.side + '/' + comp.sideTotal, VW / 2, 96, gc(G.TEXT), { outline: gc(G.OUTLINE) });
-    CT.UI.bar(fb, 140, 108, 200, 8, comp.pct / 100, P);
+    CT.Font.drawCentered(fb, T('收集 ') + comp.side + '/' + comp.sideTotal, VW / 2, 96 + BY, gc(G.TEXT), { outline: gc(G.OUTLINE) });
+    CT.UI.bar(fb, 140 + BX, 108 + BY, 200, 8, comp.pct / 100, P);
     if (this.clearCrystal) {
-      CT.Font.drawCentered(fb, T('获得 ') + this.clearCrystal.name, VW / 2, 126, P.c[15], { outline: gc(G.OUTLINE) });
-      CT.Font.drawCentered(fb, this.clearCrystal.desc, VW / 2, 140, gc(G.TEXT_DIM), { outline: gc(G.OUTLINE) });
+      CT.Font.drawCentered(fb, T('获得 ') + this.clearCrystal.name, VW / 2, 126 + BY, P.c[15], { outline: gc(G.OUTLINE) });
+      CT.Font.drawCentered(fb, this.clearCrystal.desc, VW / 2, 140 + BY, gc(G.TEXT_DIM), { outline: gc(G.OUTLINE) });
     }
     if (this.clearBlessing) {
       var bl = CT.Dialogue.wrapLines(this.clearBlessing.blessing);
       for (var i = 0; i < bl.length; i++) {
-        CT.Font.drawCentered(fb, bl[i], VW / 2, 154 + i * 13, gc(G.TEXT), { outline: gc(G.OUTLINE) });
+        CT.Font.drawCentered(fb, bl[i], VW / 2, 154 + BY + i * 13, gc(G.TEXT), { outline: gc(G.OUTLINE) });
       }
     }
     if (this.clearTimer > 0.6) {
       var nxt = CT.Themes.nextLevel(this.currentLevelId);
-      CT.Font.drawCentered(fb, nxt ? T('空格继续') : T('空格查看结局'), VW / 2, 190, P.c[0], { outline: gc(G.OUTLINE) });
+      CT.Font.drawCentered(fb, nxt ? T('空格继续') : T('空格查看结局'), VW / 2, 190 + BY, P.c[0], { outline: gc(G.OUTLINE) });
     }
   };
 
@@ -1356,7 +1374,8 @@
     CT.BG.drawLayer(fb, CT.BG.build('star').far, this.time * 5, false);
     CT.BG.drawLayer(fb, CT.BG.build('star').mid, this.time * 9, false);
     fb.fillRectDither(0, 0, VW, VH, gc(G.PANEL), 8);
-    CT.UI.title(fb, T('旅途的尽头'), VW / 2, 42, P);
+    var BY = boardY();
+    CT.UI.title(fb, T('旅途的尽头'), VW / 2, 42 + BY, P);
     var lines = [
       T('五枚本源彩晶回到了它们该在的位置。'),
       T('大陆的光重新连成一条线。'),
@@ -1364,11 +1383,11 @@
       T('前面的路还有很长。'),
     ];
     for (var i = 0; i < lines.length; i++) {
-      CT.Font.drawCentered(fb, lines[i], VW / 2, 90 + i * 22, gc(G.TEXT), { outline: gc(G.OUTLINE) });
+      CT.Font.drawCentered(fb, lines[i], VW / 2, 90 + BY + i * 22, gc(G.TEXT), { outline: gc(G.OUTLINE) });
     }
     var comp = CT.Save.completion({ collected: this.collected });
-    CT.Font.drawCentered(fb, T('收集完成度 ') + comp.pct + '%', VW / 2, 200, P.c[15], { outline: gc(G.OUTLINE) });
-    CT.Font.drawCentered(fb, T('空格返回标题'), VW / 2, 228, gc(G.TEXT_DIM), { outline: gc(G.OUTLINE) });
+    CT.Font.drawCentered(fb, T('收集完成度 ') + comp.pct + '%', VW / 2, 200 + BY, P.c[15], { outline: gc(G.OUTLINE) });
+    CT.Font.drawCentered(fb, T('空格返回标题'), VW / 2, 228 + BY, gc(G.TEXT_DIM), { outline: gc(G.OUTLINE) });
   };
 
   // ------------------------------------------------------------ 教程
@@ -1413,7 +1432,7 @@
     var tw = CT.Font.measure(label);
     var w = tw + kw + 26;
     // 放在 y=100：y=42 处是首次出现说明条，两者不能叠在一起
-    var x = Math.round((VW - w) / 2), y = 100;
+    var x = Math.round((VW - w) / 2), y = 100 + boardY();
     fb.fillRect(x, y, w, 26, gc(G.PANEL));
     fb.rect(x, y, w, 26, gc(G.PANEL_HI));
     // 按键提示：一个高亮键帽
@@ -1485,17 +1504,12 @@
   Game.prototype.renderName = function () {
     var fb = this.fb, P = this.P;
     fb.fillRect(0, 0, VW, VH, gc(G.PANEL));
-    // 顶部一层很淡的光带、底部压暗，保持界面干净
-    for (var gy = 0; gy < 96; gy++) {
-      var lv = Math.round(4 * (1 - gy / 96));
-      fb.fillRectDither(0, gy, VW, 1, P.c[6], lv);
-    }
-    fb.fillRectDither(0, 150, VW, VH - 150, gc(G.BLACK), 6);
-    CT.UI.title(fb, T('给拾光者起个名字'), VW / 2, 18, P);
+    var BY = boardY();
+    CT.UI.title(fb, T('给拾光者起个名字'), VW / 2, 18 + BY, P);
 
     // 输入框
     var bw = 220, bh = 30;
-    var bx = Math.round((VW - bw) / 2), by = 62;
+    var bx = Math.round((VW - bw) / 2), by = 62 + BY;
     fb.fillRect(bx, by, bw, bh, gc(G.PANEL));
     fb.rect(bx, by, bw, bh, this.nameIndex === 0 || this.nameIndex === 1 ? gc(G.ACCENT) : gc(G.PANEL_HI));
     fb.rect(bx + 1, by + 1, bw - 2, bh - 2, gc(G.PANEL_LO));
@@ -1520,18 +1534,18 @@
       var w2 = CT.Font.measure(labels[k]) + (k === 0 ? 26 : 18);
       var sel = k === this.nameIndex;
       // 选中：浅底 + 深字（原来是浅底浅字，完全看不清）
-      fb.fillRect(cx, 112, w2, 22, sel ? gc(G.PANEL_HI) : gc(G.PANEL_LO));
-      fb.rect(cx, 112, w2, 22, sel ? gc(G.ACCENT) : gc(G.PANEL_HI));
+      fb.fillRect(cx, 112 + BY, w2, 22, sel ? gc(G.PANEL_HI) : gc(G.PANEL_LO));
+      fb.rect(cx, 112 + BY, w2, 22, sel ? gc(G.ACCENT) : gc(G.PANEL_HI));
       if (k === 0) {
-        drawDice(fb, cx + 6, 117, sel ? P.c[15] : gc(G.TEXT_DIM),
+        drawDice(fb, cx + 6, 117 + BY, sel ? P.c[15] : gc(G.TEXT_DIM),
                  sel ? gc(G.PANEL_HI) : gc(G.PANEL_LO));
       }
-      CT.Font.draw(fb, labels[k], cx + (k === 0 ? 22 : 9), 117,
+      CT.Font.draw(fb, labels[k], cx + (k === 0 ? 22 : 9), 117 + BY,
         sel ? gc(G.PANEL) : gc(G.TEXT_DIM),
         sel ? null : { outline: gc(G.OUTLINE) });
       cx += w2 + 12;
     }
-    CT.Font.drawCentered(fb, T('直接敲键盘输入 · 回车确定'), VW / 2, 152, gc(G.TEXT_DIM), { outline: gc(G.OUTLINE) });
+    CT.Font.drawCentered(fb, T('直接敲键盘输入 · 回车确定'), VW / 2, 152 + BY, gc(G.TEXT_DIM), { outline: gc(G.OUTLINE) });
   };
 
   // 骰子图标：方框 + 三点
