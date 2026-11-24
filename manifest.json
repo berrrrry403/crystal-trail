@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 1,
+  "backend": "native",
+  "rasterEngine": "libreoffice",
+  "source": "saved",
+  "inputPath": "C:\\Users\\ASUS\\Documents\\deepseek-harness\\default-workspace\\crystal-trail\\晶途拾光_AI使用说明.docx",
+  "sourceSha256": "2176e5c9abc8e6e2d1ea6b04f5b12abcdb28471c725462ba7399231b7668a38f",
+  "dpi": 130,
+  "pageCount": 7,
+  "images": [
+    {
+      "index": 1,
+      "page": 1,
+      "path": "C:\\Users\\ASUS\\Documents\\deepseek-harness\\default-workspace\\crystal-trail\\build\\ai-doc-preview\\page-0001.png",
+      "width": 1075,
+      "height": 1521,
+      "rectangle": {
+        "x": 0,
+        "y": 0,
+        "width": 793.7333333333333,
+        "height": 1122.5333333333333
+      },
+      "byteLength": 77565
+    },
+    {
+      "index": 2,
+      "page": 2,
+      "path": "C:\\Users\\ASUS\\Documents\\deepseek-harness\\default-workspace\\crystal-trail\\build\\ai-doc-preview\\page-0002.png",
+      "width": 1075,
+      "height": 1521,
+      "rectangle": {
+        "x": 0,
+        "y": 0,
+        "width": 793.7333333333333,
+        "height": 1122.5333333333333
+      },
+      "byteLength": 191512
+    },
+    {
+      "index": 3,
+      "page": 3,
+      "path": "C:\\Users\\ASUS\\Documents\\deepseek-harness\\default-workspace\\crystal-trail\\build\\ai-doc-preview\\page-0003.png",
+      "width": 1075,
+      "height": 1521,
+      "rectangle": {
+        "x": 0,
+        "y": 0,
+        "width": 793.7333333333333,
+        "height": 1122.5333333333333
+      },
+      "byteLength": 262663
+    },
+    {
+      "index": 4,
+      "page": 4,
+      "path": "C:\\Users\\ASUS\\Documents\\deepseek-harness\\default-workspace\\crystal-trail\\build\\ai-doc-preview\\page-0004.png",
+      "width": 1075,
+      "height": 1521,
+      "rectangle": {
+        "x": 0,
+        "y": 0,
+        "width": 793.7333333333333,
+        "height": 1122.5333333333333
+      },
+      "byteLength": 170709
+    },
+    {
+      "index": 5,
+      "page": 5,
+      "path": "C:\\Users\\ASUS\\Documents\\deepseek-harness\\default-workspace\\crystal-trail\\build\\ai-doc-preview\\page-0005.png",
+      "width": 1075,
+      "height": 1521,
+      "rectangle": {
+        "x": 0,
+        "y": 0,
+        "width": 793.7333333333333,
+        "height": 1122.5333333333333
+      },
+      "byteLength": 204484
+    },
+    {
+      "index": 6,
+      "page": 6,
+      "path": "C:\\Users\\ASUS\\Documents\\deepseek-harness\\default-workspace\\crystal-trail\\build\\ai-doc-preview\\page-0006.png",
+      "width": 1075,
+      "height": 1521,
+      "rectangle": {
+        "x": 0,
+        "y": 0,
+        "width": 793.7333333333333,
+        "height": 1122.5333333333333
+      },
+      "byteLength": 203382
+    },
+    {
+      "index": 7,
+      "page": 7,
+      "path": "C:\\Users\\ASUS\\Documents\\deepseek-harness\\default-workspace\\crystal-trail\\build\\ai-doc-preview\\page-0007.png",
+      "width": 1075,
+      "height": 1521,
+      "rectangle": {
+        "x": 0,
+        "y": 0,
+        "width": 793.7333333333333,
+        "height": 1122.5333333333333
+      },
+      "byteLength": 75924
+    }
+  ],
+  "missingFonts": [
+    "Courier"
+  ]
+}

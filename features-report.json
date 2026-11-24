@@ -1,0 +1,96 @@
+{
+ "pass": 18,
+ "total": 18,
+ "results": [
+  {
+   "check": "取名：随机",
+   "ok": true,
+   "detail": "随机得到「云舟」"
+  },
+  {
+   "check": "取名：输入",
+   "ok": true,
+   "detail": "nameBuf=\"Ash\""
+  },
+  {
+   "check": "取名：确定",
+   "ok": true,
+   "detail": "state=playing 存档名=Ash"
+  },
+  {
+   "check": "取名：限长",
+   "ok": true,
+   "detail": "10 <= 10"
+  },
+  {
+   "check": "静音：分声道",
+   "ok": true,
+   "detail": "bgm/sfx 可独立开关"
+  },
+  {
+   "check": "静音：设置页",
+   "ok": true,
+   "detail": "音乐=true 音效=true"
+  },
+  {
+   "check": "语言：界面文案",
+   "ok": true,
+   "detail": "zh=\"开始新的旅程\" en=\"New Journey\""
+  },
+  {
+   "check": "语言：叙事文本",
+   "ok": true,
+   "detail": "zh=\"蕨尖露水\" en=\"Fern Tip Dew\""
+  },
+  {
+   "check": "语言：无遗漏",
+   "ok": true,
+   "detail": "全部字面量已覆盖"
+  },
+  {
+   "check": "教程：自动开启",
+   "ok": true,
+   "detail": "forest-01 首次进入 step=0"
+  },
+  {
+   "check": "教程：走位推进",
+   "ok": true,
+   "detail": "主角移动 51px 后 step=2"
+  },
+  {
+   "check": "教程：跳跃推进",
+   "ok": true,
+   "detail": "step=2"
+  },
+  {
+   "check": "教程：可渲染",
+   "ok": true,
+   "detail": "render 无异常"
+  },
+  {
+   "check": "图鉴：插画尺寸",
+   "ok": true,
+   "detail": "forest:192x128 amber:192x128 cloud:192x128 water:192x128 star:192x128"
+  },
+  {
+   "check": "图鉴：解锁逻辑",
+   "ok": true,
+   "detail": "彩晶未取时锁定，取得后解锁"
+  },
+  {
+   "check": "图鉴：五张文案",
+   "ok": true,
+   "detail": "5 张，均含标题与文案"
+  },
+  {
+   "check": "图鉴：故事线",
+   "ok": true,
+   "detail": "故事 125 字"
+  },
+  {
+   "check": "图鉴：12 页可渲染",
+   "ok": true,
+   "detail": "5 主题 + 总览 + 5 插画 + 故事"
+  }
+ ]
+}

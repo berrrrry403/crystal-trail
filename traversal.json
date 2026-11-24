@@ -1,0 +1,202 @@
+[
+ {
+  "id": "forest-01",
+  "reachedExit": false,
+  "progress": "53.9%",
+  "tile": 66,
+  "width": 122,
+  "seconds": "28"
+ },
+ {
+  "id": "forest-02",
+  "reachedExit": false,
+  "progress": "56.7%",
+  "tile": 79,
+  "width": 139,
+  "seconds": "31"
+ },
+ {
+  "id": "forest-03",
+  "reachedExit": false,
+  "progress": "73.5%",
+  "tile": 109,
+  "width": 148,
+  "seconds": "35"
+ },
+ {
+  "id": "forest-04",
+  "reachedExit": false,
+  "progress": "49.0%",
+  "tile": 79,
+  "width": 162,
+  "seconds": "33"
+ },
+ {
+  "id": "forest-05",
+  "reachedExit": false,
+  "progress": "42.3%",
+  "tile": 71,
+  "width": 169,
+  "seconds": "32"
+ },
+ {
+  "id": "amber-01",
+  "reachedExit": false,
+  "progress": "62.2%",
+  "tile": 75,
+  "width": 120,
+  "seconds": "25"
+ },
+ {
+  "id": "amber-02",
+  "reachedExit": true,
+  "progress": "97.6%",
+  "tile": 136,
+  "width": 139,
+  "seconds": "15"
+ },
+ {
+  "id": "amber-03",
+  "reachedExit": false,
+  "progress": "75.5%",
+  "tile": 115,
+  "width": 152,
+  "seconds": "32"
+ },
+ {
+  "id": "amber-04",
+  "reachedExit": false,
+  "progress": "57.1%",
+  "tile": 91,
+  "width": 159,
+  "seconds": "29"
+ },
+ {
+  "id": "amber-05",
+  "reachedExit": false,
+  "progress": "40.5%",
+  "tile": 70,
+  "width": 174,
+  "seconds": "31"
+ },
+ {
+  "id": "cloud-01",
+  "reachedExit": false,
+  "progress": "79.7%",
+  "tile": 96,
+  "width": 120,
+  "seconds": "29"
+ },
+ {
+  "id": "cloud-02",
+  "reachedExit": false,
+  "progress": "49.6%",
+  "tile": 68,
+  "width": 138,
+  "seconds": "33"
+ },
+ {
+  "id": "cloud-03",
+  "reachedExit": false,
+  "progress": "17.7%",
+  "tile": 27,
+  "width": 150,
+  "seconds": "23"
+ },
+ {
+  "id": "cloud-04",
+  "reachedExit": true,
+  "progress": "96.9%",
+  "tile": 152,
+  "width": 157,
+  "seconds": "26"
+ },
+ {
+  "id": "cloud-05",
+  "reachedExit": false,
+  "progress": "34.8%",
+  "tile": 58,
+  "width": 168,
+  "seconds": "29"
+ },
+ {
+  "id": "water-01",
+  "reachedExit": true,
+  "progress": "97.3%",
+  "tile": 121,
+  "width": 124,
+  "seconds": "11"
+ },
+ {
+  "id": "water-02",
+  "reachedExit": false,
+  "progress": "97.5%",
+  "tile": 132,
+  "width": 135,
+  "seconds": "27"
+ },
+ {
+  "id": "water-03",
+  "reachedExit": true,
+  "progress": "96.7%",
+  "tile": 142,
+  "width": 147,
+  "seconds": "24"
+ },
+ {
+  "id": "water-04",
+  "reachedExit": false,
+  "progress": "29.6%",
+  "tile": 46,
+  "width": 157,
+  "seconds": "27"
+ },
+ {
+  "id": "water-05",
+  "reachedExit": false,
+  "progress": "98.0%",
+  "tile": 169,
+  "width": 172,
+  "seconds": "24"
+ },
+ {
+  "id": "star-01",
+  "reachedExit": false,
+  "progress": "97.2%",
+  "tile": 119,
+  "width": 122,
+  "seconds": "24"
+ },
+ {
+  "id": "star-02",
+  "reachedExit": true,
+  "progress": "96.4%",
+  "tile": 128,
+  "width": 133,
+  "seconds": "23"
+ },
+ {
+  "id": "star-03",
+  "reachedExit": false,
+  "progress": "13.4%",
+  "tile": 19,
+  "width": 145,
+  "seconds": "23"
+ },
+ {
+  "id": "star-04",
+  "reachedExit": false,
+  "progress": "58.8%",
+  "tile": 96,
+  "width": 164,
+  "seconds": "36"
+ },
+ {
+  "id": "star-05",
+  "reachedExit": false,
+  "progress": "98.0%",
+  "tile": 170,
+  "width": 173,
+  "seconds": "28"
+ }
+]

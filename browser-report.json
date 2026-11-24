@@ -1,0 +1,80 @@
+{
+ "browser": "Edg/158.0.4370.33",
+ "results": [
+  {
+   "name": "页面启动",
+   "ok": true,
+   "detail": "#boot 已隐藏=true  title=\"晶途拾光 · Crystal Trail\""
+  },
+  {
+   "name": "控制台无报错",
+   "ok": true,
+   "detail": "0 条 error/exception"
+  },
+  {
+   "name": "调试钩子 + 画布",
+   "ok": true,
+   "detail": "__CRYSTAL_TRAIL__=true  canvas=1410x716"
+  },
+  {
+   "name": "localStorage",
+   "ok": true,
+   "detail": "ok"
+  },
+  {
+   "name": "取名页",
+   "ok": true,
+   "detail": "state|预填名字 = name|松间"
+  },
+  {
+   "name": "键盘进入游戏",
+   "ok": true,
+   "detail": "state=playing"
+  },
+  {
+   "name": "对话锁移动",
+   "ok": true,
+   "detail": "开场对话激活=true 按6次后关闭=false | page=2/0 revealed=20/0 textInput=false tut=true state=playing"
+  },
+  {
+   "name": "首次出现说明",
+   "ok": true,
+   "detail": "宝物计数|右上角：整局收集进度"
+  },
+  {
+   "name": "按键驱动移动",
+   "ok": true,
+   "detail": "主角位移 126 px"
+  },
+  {
+   "name": "rAF 吞吐",
+   "ok": true,
+   "detail": "165 次/秒（无头环境不与 vsync 同步，真实窗口为 60）"
+  },
+  {
+   "name": "单帧耗时",
+   "ok": true,
+   "detail": "1.141 ms（预算 16.67）"
+  },
+  {
+   "name": "存档写入",
+   "ok": true,
+   "detail": "key: crystalTrail.save.auto,crystalTrail.save.1"
+  },
+  {
+   "name": "坑底必复活",
+   "ok": true,
+   "detail": "OK lives 3->2 after 194 frames, back=true"
+  },
+  {
+   "name": "图鉴插画页",
+   "ok": true,
+   "detail": "codexPage=6 已渲染并截图"
+  },
+  {
+   "name": "触屏控件渲染",
+   "ok": true,
+   "detail": "drawTouch 无异常"
+  }
+ ]
+}

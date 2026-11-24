@@ -1,0 +1,230 @@
+[
+ {
+  "check": "exit",
+  "level": "forest-01",
+  "ok": true,
+  "detail": "exit tile 162, floor row 23"
+ },
+ {
+  "check": "exit",
+  "level": "forest-02",
+  "ok": true,
+  "detail": "exit tile 179, floor row 20"
+ },
+ {
+  "check": "exit",
+  "level": "forest-03",
+  "ok": true,
+  "detail": "exit tile 189, floor row 24"
+ },
+ {
+  "check": "exit",
+  "level": "forest-04",
+  "ok": true,
+  "detail": "exit tile 208, floor row 16"
+ },
+ {
+  "check": "exit",
+  "level": "forest-05",
+  "ok": true,
+  "detail": "exit tile 216, floor row 17"
+ },
+ {
+  "check": "exit",
+  "level": "amber-01",
+  "ok": true,
+  "detail": "exit tile 171, floor row 22"
+ },
+ {
+  "check": "exit",
+  "level": "amber-02",
+  "ok": true,
+  "detail": "exit tile 188, floor row 20"
+ },
+ {
+  "check": "exit",
+  "level": "amber-03",
+  "ok": true,
+  "detail": "exit tile 198, floor row 18"
+ },
+ {
+  "check": "exit",
+  "level": "amber-04",
+  "ok": true,
+  "detail": "exit tile 213, floor row 20"
+ },
+ {
+  "check": "exit",
+  "level": "amber-05",
+  "ok": true,
+  "detail": "exit tile 229, floor row 24"
+ },
+ {
+  "check": "exit",
+  "level": "cloud-01",
+  "ok": true,
+  "detail": "exit tile 188, floor row 20"
+ },
+ {
+  "check": "exit",
+  "level": "cloud-02",
+  "ok": true,
+  "detail": "exit tile 200, floor row 17"
+ },
+ {
+  "check": "exit",
+  "level": "cloud-03",
+  "ok": true,
+  "detail": "exit tile 208, floor row 23"
+ },
+ {
+  "check": "exit",
+  "level": "cloud-04",
+  "ok": true,
+  "detail": "exit tile 226, floor row 25"
+ },
+ {
+  "check": "exit",
+  "level": "cloud-05",
+  "ok": true,
+  "detail": "exit tile 242, floor row 18"
+ },
+ {
+  "check": "exit",
+  "level": "water-01",
+  "ok": true,
+  "detail": "exit tile 194, floor row 14"
+ },
+ {
+  "check": "exit",
+  "level": "water-02",
+  "ok": true,
+  "detail": "exit tile 211, floor row 17"
+ },
+ {
+  "check": "exit",
+  "level": "water-03",
+  "ok": true,
+  "detail": "exit tile 217, floor row 23"
+ },
+ {
+  "check": "exit",
+  "level": "water-04",
+  "ok": true,
+  "detail": "exit tile 237, floor row 16"
+ },
+ {
+  "check": "exit",
+  "level": "water-05",
+  "ok": true,
+  "detail": "exit tile 249, floor row 25"
+ },
+ {
+  "check": "exit",
+  "level": "star-01",
+  "ok": true,
+  "detail": "exit tile 202, floor row 25"
+ },
+ {
+  "check": "exit",
+  "level": "star-02",
+  "ok": true,
+  "detail": "exit tile 218, floor row 24"
+ },
+ {
+  "check": "exit",
+  "level": "star-03",
+  "ok": true,
+  "detail": "exit tile 230, floor row 18"
+ },
+ {
+  "check": "exit",
+  "level": "star-04",
+  "ok": true,
+  "detail": "exit tile 242, floor row 21"
+ },
+ {
+  "check": "exit",
+  "level": "star-05",
+  "ok": true,
+  "detail": "exit tile 255, floor row 21"
+ },
+ {
+  "check": "掉坑扣命",
+  "level": "forest-01",
+  "ok": true,
+  "detail": "命 3->2 受伤闪屏=true 回重生点=true 复活后仍可移动=true(15px)"
+ },
+ {
+  "check": "掉坑扣命",
+  "level": "cloud-02",
+  "ok": true,
+  "detail": "命 3->2 受伤闪屏=true 回重生点=true 复活后仍可移动=true(15px)"
+ },
+ {
+  "check": "掉坑扣命",
+  "level": "star-04",
+  "ok": true,
+  "detail": "命 3->2 受伤闪屏=true 回重生点=true 复活后仍可移动=true(15px)"
+ },
+ {
+  "check": "撞滚石扣命",
+  "level": "forest-01",
+  "ok": true,
+  "detail": "命 3->2（滚石在 tile 117）"
+ },
+ {
+  "check": "三条命用完",
+  "level": "forest-01",
+  "ok": true,
+  "detail": "重开后命数=3 关卡=forest-01 状态=playing"
+ },
+ {
+  "check": "collect+save",
+  "level": "forest-01",
+  "ok": true,
+  "detail": "forest-01-t1 collected=true persisted=true"
+ },
+ {
+  "check": "camera-clamp",
+  "level": "forest-01",
+  "ok": true,
+  "detail": "camera=(0,8) 允许范围 x:0~2176 y:0~194"
+ },
+ {
+  "check": "camera-clamp",
+  "level": "forest-05",
+  "ok": true,
+  "detail": "camera=(0,0) 允许范围 x:0~3040 y:0~178"
+ },
+ {
+  "check": "camera-clamp",
+  "level": "star-05",
+  "ok": true,
+  "detail": "camera=(0,40) 允许范围 x:0~3664 y:0~226"
+ },
+ {
+  "check": "camera-clamp",
+  "level": "cloud-01",
+  "ok": true,
+  "detail": "camera=(0,24) 允许范围 x:0~2592 y:0~210"
+ },
+ {
+  "check": "站立不跺脚",
+  "level": "forest-01",
+  "ok": true,
+  "detail": "着地=true 1.5 秒内落地事件=0 新增交互粒子=0（当前 1->1）"
+ },
+ {
+  "check": "移动不抖装饰",
+  "level": "forest-01",
+  "ok": true,
+  "detail": "playerMoving 标志可切换（移动时不叠加 sway）"
+ },
+ {
+  "check": "typewriter",
+  "level": "forest-01",
+  "ok": true,
+  "detail": "revealed 24 chars after 1.0s (expected 24)"
+ }
+]

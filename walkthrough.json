@@ -1,0 +1,227 @@
+[
+ {
+  "id": "forest-01",
+  "progress": "16.5%",
+  "maxXTile": 27,
+  "widthTiles": 166,
+  "cleared": false,
+  "blockedBy": "door",
+  "climb": "27/166"
+ },
+ {
+  "id": "forest-02",
+  "progress": "19.5%",
+  "maxXTile": 36,
+  "widthTiles": 183,
+  "cleared": false,
+  "blockedBy": "door",
+  "climb": "36/183"
+ },
+ {
+  "id": "forest-03",
+  "progress": "23%",
+  "maxXTile": 44,
+  "widthTiles": 193,
+  "cleared": false,
+  "blockedBy": "door",
+  "climb": "44/193"
+ },
+ {
+  "id": "forest-04",
+  "progress": "19.6%",
+  "maxXTile": 42,
+  "widthTiles": 212,
+  "cleared": false,
+  "blockedBy": "door",
+  "climb": "42/212"
+ },
+ {
+  "id": "forest-05",
+  "progress": "12.5%",
+  "maxXTile": 27,
+  "widthTiles": 220,
+  "cleared": false,
+  "blockedBy": "door",
+  "climb": "27/220"
+ },
+ {
+  "id": "amber-01",
+  "progress": "15.7%",
+  "maxXTile": 27,
+  "widthTiles": 175,
+  "cleared": false,
+  "blockedBy": "door",
+  "climb": "27/175"
+ },
+ {
+  "id": "amber-02",
+  "progress": "14.9%",
+  "maxXTile": 29,
+  "widthTiles": 192,
+  "cleared": false,
+  "blockedBy": "door",
+  "climb": "29/192"
+ },
+ {
+  "id": "amber-03",
+  "progress": "21.5%",
+  "maxXTile": 43,
+  "widthTiles": 202,
+  "cleared": false,
+  "blockedBy": "door",
+  "climb": "43/202"
+ },
+ {
+  "id": "amber-04",
+  "progress": "12.2%",
+  "maxXTile": 26,
+  "widthTiles": 217,
+  "cleared": false,
+  "blockedBy": "door",
+  "climb": "26/217"
+ },
+ {
+  "id": "amber-05",
+  "progress": "19.1%",
+  "maxXTile": 44,
+  "widthTiles": 233,
+  "cleared": false,
+  "blockedBy": "door",
+  "climb": "44/233"
+ },
+ {
+  "id": "cloud-01",
+  "progress": "14.8%",
+  "maxXTile": 28,
+  "widthTiles": 192,
+  "cleared": false,
+  "blockedBy": "door",
+  "climb": "28/192"
+ },
+ {
+  "id": "cloud-02",
+  "progress": "15.9%",
+  "maxXTile": 32,
+  "widthTiles": 204,
+  "cleared": false,
+  "blockedBy": "door",
+  "climb": "32/204"
+ },
+ {
+  "id": "cloud-03",
+  "progress": "10.1%",
+  "maxXTile": 21,
+  "widthTiles": 212,
+  "cleared": false,
+  "blockedBy": "door",
+  "climb": "21/212"
+ },
+ {
+  "id": "cloud-04",
+  "progress": "9.3%",
+  "maxXTile": 21,
+  "widthTiles": 230,
+  "cleared": false,
+  "blockedBy": "door",
+  "climb": "21/230"
+ },
+ {
+  "id": "cloud-05",
+  "progress": "15.6%",
+  "maxXTile": 38,
+  "widthTiles": 246,
+  "cleared": false,
+  "blockedBy": "door",
+  "climb": "38/246"
+ },
+ {
+  "id": "water-01",
+  "progress": "14.4%",
+  "maxXTile": 28,
+  "widthTiles": 198,
+  "cleared": false,
+  "blockedBy": "door",
+  "climb": "28/198"
+ },
+ {
+  "id": "water-02",
+  "progress": "15.1%",
+  "maxXTile": 32,
+  "widthTiles": 215,
+  "cleared": false,
+  "blockedBy": "door",
+  "climb": "32/215"
+ },
+ {
+  "id": "water-03",
+  "progress": "15.6%",
+  "maxXTile": 34,
+  "widthTiles": 221,
+  "cleared": false,
+  "blockedBy": "door",
+  "climb": "34/221"
+ },
+ {
+  "id": "water-04",
+  "progress": "12.2%",
+  "maxXTile": 29,
+  "widthTiles": 241,
+  "cleared": false,
+  "blockedBy": "door",
+  "climb": "29/241"
+ },
+ {
+  "id": "water-05",
+  "progress": "11.7%",
+  "maxXTile": 30,
+  "widthTiles": 253,
+  "cleared": false,
+  "blockedBy": "door",
+  "climb": "30/253"
+ },
+ {
+  "id": "star-01",
+  "progress": "18.6%",
+  "maxXTile": 38,
+  "widthTiles": 206,
+  "cleared": false,
+  "blockedBy": "door",
+  "climb": "38/206"
+ },
+ {
+  "id": "star-02",
+  "progress": "15%",
+  "maxXTile": 33,
+  "widthTiles": 222,
+  "cleared": false,
+  "blockedBy": "door",
+  "climb": "33/222"
+ },
+ {
+  "id": "star-03",
+  "progress": "17.7%",
+  "maxXTile": 41,
+  "widthTiles": 234,
+  "cleared": false,
+  "blockedBy": "door",
+  "climb": "41/234"
+ },
+ {
+  "id": "star-04",
+  "progress": "12%",
+  "maxXTile": 30,
+  "widthTiles": 246,
+  "cleared": false,
+  "blockedBy": "door",
+  "climb": "30/246"
+ },
+ {
+  "id": "star-05",
+  "progress": "17.9%",
+  "maxXTile": 46,
+  "widthTiles": 259,
+  "cleared": false,
+  "blockedBy": "door",
+  "climb": "46/259"
+ }
+]

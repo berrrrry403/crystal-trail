@@ -1,0 +1,66 @@
+{
+ "rows": [
+  {
+   "level": "forest-01",
+   "coldFirstFrame": 1.05,
+   "stepP50": 0.017,
+   "renderP50": 0.791,
+   "totalP50": 0.814,
+   "totalP95": 1.207,
+   "totalP99": 1.488,
+   "max": 2.178,
+   "over16ms": 0
+  },
+  {
+   "level": "amber-02",
+   "coldFirstFrame": 1,
+   "stepP50": 0.024,
+   "renderP50": 0.904,
+   "totalP50": 0.93,
+   "totalP95": 1.355,
+   "totalP99": 1.628,
+   "max": 1.973,
+   "over16ms": 0
+  },
+  {
+   "level": "cloud-03",
+   "coldFirstFrame": 0.88,
+   "stepP50": 0.021,
+   "renderP50": 0.74,
+   "totalP50": 0.761,
+   "totalP95": 1.152,
+   "totalP99": 1.484,
+   "max": 3.832,
+   "over16ms": 0
+  },
+  {
+   "level": "water-04",
+   "coldFirstFrame": 0.86,
+   "stepP50": 0.014,
+   "renderP50": 0.739,
+   "totalP50": 0.758,
+   "totalP95": 1.149,
+   "totalP99": 1.373,
+   "max": 2.05,
+   "over16ms": 0
+  },
+  {
+   "level": "star-05",
+   "coldFirstFrame": 0.95,
+   "stepP50": 0.031,
+   "renderP50": 0.91,
+   "totalP50": 0.949,
+   "totalP95": 1.394,
+   "totalP99": 1.766,
+   "max": 2.1,
+   "over16ms": 0
+  }
+ ],
+ "verdict": {
+  "allFramesUnder16_7ms": true,
+  "worstP99": 1.766,
+  "budgetMs": 16.667,
+  "headroomP50": 15.72,
+  "heapDeltaMB": -0.2
+ }
+}

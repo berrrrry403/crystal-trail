@@ -1,0 +1,146 @@
+[
+ {
+  "id": "forest-01",
+  "pitTile": 37,
+  "ok": true,
+  "detail": "第 70 帧扣命，命 3->2，回重生点=true"
+ },
+ {
+  "id": "forest-03",
+  "pitTile": 35,
+  "ok": true,
+  "detail": "第 70 帧扣命，命 3->2，回重生点=true"
+ },
+ {
+  "id": "forest-04",
+  "pitTile": 45,
+  "ok": true,
+  "detail": "第 71 帧扣命，命 3->2，回重生点=true"
+ },
+ {
+  "id": "forest-05",
+  "pitTile": 48,
+  "ok": true,
+  "detail": "第 68 帧扣命，命 3->2，回重生点=true"
+ },
+ {
+  "id": "amber-01",
+  "pitTile": 47,
+  "ok": true,
+  "detail": "第 73 帧扣命，命 3->2，回重生点=true"
+ },
+ {
+  "id": "amber-02",
+  "pitTile": 71,
+  "ok": true,
+  "detail": "第 68 帧扣命，命 3->2，回重生点=true"
+ },
+ {
+  "id": "amber-03",
+  "pitTile": 148,
+  "ok": true,
+  "detail": "第 71 帧扣命，命 3->2，回重生点=true"
+ },
+ {
+  "id": "amber-04",
+  "pitTile": 16,
+  "ok": true,
+  "detail": "第 70 帧扣命，命 3->2，回重生点=true"
+ },
+ {
+  "id": "amber-05",
+  "pitTile": 58,
+  "ok": true,
+  "detail": "第 75 帧扣命，命 3->2，回重生点=true"
+ },
+ {
+  "id": "cloud-01",
+  "pitTile": 39,
+  "ok": true,
+  "detail": "第 71 帧扣命，命 3->2，回重生点=true"
+ },
+ {
+  "id": "cloud-02",
+  "pitTile": 44,
+  "ok": true,
+  "detail": "第 73 帧扣命，命 3->2，回重生点=true"
+ },
+ {
+  "id": "cloud-03",
+  "pitTile": 73,
+  "ok": true,
+  "detail": "第 73 帧扣命，命 3->2，回重生点=true"
+ },
+ {
+  "id": "cloud-04",
+  "pitTile": 48,
+  "ok": true,
+  "detail": "第 68 帧扣命，命 3->2，回重生点=true"
+ },
+ {
+  "id": "cloud-05",
+  "pitTile": 66,
+  "ok": true,
+  "detail": "第 71 帧扣命，命 3->2，回重生点=true"
+ },
+ {
+  "id": "water-01",
+  "pitTile": 49,
+  "ok": true,
+  "detail": "第 73 帧扣命，命 3->2，回重生点=true"
+ },
+ {
+  "id": "water-02",
+  "pitTile": 16,
+  "ok": true,
+  "detail": "第 73 帧扣命，命 3->2，回重生点=true"
+ },
+ {
+  "id": "water-03",
+  "pitTile": 16,
+  "ok": true,
+  "detail": "第 68 帧扣命，命 3->2，回重生点=true"
+ },
+ {
+  "id": "water-04",
+  "pitTile": 44,
+  "ok": true,
+  "detail": "第 68 帧扣命，命 3->2，回重生点=true"
+ },
+ {
+  "id": "water-05",
+  "pitTile": 118,
+  "ok": true,
+  "detail": "第 68 帧扣命，命 3->2，回重生点=true"
+ },
+ {
+  "id": "star-01",
+  "pitTile": 118,
+  "ok": true,
+  "detail": "第 71 帧扣命，命 3->2，回重生点=true"
+ },
+ {
+  "id": "star-02",
+  "pitTile": 62,
+  "ok": true,
+  "detail": "第 68 帧扣命，命 3->2，回重生点=true"
+ },
+ {
+  "id": "star-03",
+  "pitTile": 44,
+  "ok": true,
+  "detail": "第 73 帧扣命，命 3->2，回重生点=true"
+ },
+ {
+  "id": "star-04",
+  "pitTile": 94,
+  "ok": true,
+  "detail": "第 75 帧扣命，命 3->2，回重生点=true"
+ },
+ {
+  "id": "star-05",
+  "pitTile": 72,
+  "ok": true,
+  "detail": "第 73 帧扣命，命 3->2，回重生点=true"
+ }
+]

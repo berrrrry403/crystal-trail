@@ -1,0 +1,96 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no,viewport-fit=cover">
+<meta name="theme-color" content="#0e1022">
+<meta name="description" content="晶途拾光 — 8-bit 像素平台解谜游戏。无战斗、无死亡惩罚，安静地探索彩晶大陆。">
+<title>晶途拾光 · Crystal Trail</title>
+<style>
+  /* §7.1 整数倍缩放 + 黑边补齐；§7.6 禁止抗锯齿与模糊 */
+  html, body {
+    margin: 0; padding: 0; height: 100%; overflow: hidden;
+    background: #0a0c14;
+    -webkit-user-select: none; user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: none;
+  }
+  #stage {
+    position: fixed; inset: 0;
+    display: flex; align-items: center; justify-content: center;
+  }
+  #screen {
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+    display: block;
+    background: #0a0c14;
+    box-shadow: 0 0 0 1px #151b2c;
+    outline: none;
+  }
+  #boot {
+    position: fixed; inset: 0; display: flex; align-items: center; justify-content: center;
+    color: #8b96b4; font: 13px/1.6 ui-monospace, Consolas, monospace;
+    background: #0a0c14; text-align: center; padding: 24px;
+  }
+  #boot.hidden { display: none; }
+</style>
+</head>
+<body>
+<div id="stage"><canvas id="screen" width="1440" height="810"></canvas></div>
+<div id="boot">正在装载点阵字库与瓦片…</div>
+<script>
+  window.addEventListener('error', function (e) {
+    var b = document.getElementById('boot');
+    if (b) { b.classList.remove('hidden'); b.textContent = '启动失败：' + (e.message || e.error); }
+  });
+</script>
+  <script src="../src/core/rng.js"></script>
+  <script src="../src/core/fb.js"></script>
+  <script src="../src/core/input.js"></script>
+  <script src="../src/core/audio.js"></script>
+  <script src="../src/art/palette.js"></script>
+  <script src="../src/art/artkit.js"></script>
+  <script src="../src/generated/font.js"></script>
+  <script src="../src/art/font.js"></script>
+  <script src="../src/art/gen_tiles.js"></script>
+  <script src="../src/art/gen_bg.js"></script>
+  <script src="../src/art/gen_sprites.js"></script>
+  <script src="../src/generated/data.js"></script>
+  <script src="../src/world/themes.js"></script>
+  <script src="../src/world/levelgen.js"></script>
+  <script src="../src/world/level.js"></script>
+  <script src="../src/game/player.js"></script>
+  <script src="../src/game/camera.js"></script>
+  <script src="../src/game/mech.js"></script>
+  <script src="../src/game/particles.js"></script>
+  <script src="../src/game/dialogue.js"></script>
+  <script src="../src/game/save.js"></script>
+  <script src="../src/game/ui.js"></script>
+  <script src="../src/game/game.js"></script>
+  <script src="../src/main.js"></script>
+<script>
+  window.addEventListener('load', function () {
+    var b = document.getElementById('boot');
+    if (b) b.classList.add('hidden');
+    var c = document.getElementById('screen');
+    if (c) c.focus();
+  });
+</script>
+<script>
+  // 自动进入 forest-01 并推进 150 帧，用于无头浏览器截图验证真实引擎下的游戏画面
+  document.addEventListener('DOMContentLoaded', function () {
+    try {
+      var dbg = window.__CRYSTAL_TRAIL__;
+      if (!dbg) { document.title = 'FAIL: no debug hook'; return; }
+      dbg.startAt('forest-01');
+      dbg.stepOnce(150);
+      dbg.game.render();
+      document.title = 'OK: playing ' + dbg.game.currentLevelId;
+    } catch (e) {
+      document.title = 'FAIL: ' + e.message;
+    }
+  });
+</script></body>
+</html>
+

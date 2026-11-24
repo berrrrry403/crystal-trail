@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "backend": "native",
+  "rasterEngine": "libreoffice",
+  "source": "saved",
+  "inputPath": "C:\\Users\\ASUS\\Documents\\deepseek-harness\\default-workspace\\crystal-trail\\晶途拾光_实现说明与规格符合性报告.docx",
+  "sourceSha256": "08d3b763e1c6f7bbb0622cbe6ac812ff20eda7604daf634bed383f65a1ad772f",
+  "dpi": 110,
+  "pageCount": 22,
+  "images": [
+    {
+      "index": 1,
+      "page": 1,
+      "path": "C:\\Users\\ASUS\\Documents\\deepseek-harness\\default-workspace\\crystal-trail\\build\\report-preview\\page-0001.png",
+      "width": 935,
+      "height": 1210,
+      "rectangle": {
+        "x": 0,
+        "y": 0,
+        "width": 816,
+        "height": 1056
+      },
+      "byteLength": 67127
+    },
+    {
+      "index": 2,
+      "page": 2,
+      "path": "C:\\Users\\ASUS\\Documents\\deepseek-harness\\default-workspace\\crystal-trail\\build\\report-preview\\page-0002.png",
+      "width": 935,
+      "height": 1210,
+      "rectangle": {
+        "x": 0,
+        "y": 0,
+        "width": 816,
+        "height": 1056
+      },
+      "byteLength": 75594
+    },
+    {
+      "index": 3,
+      "page": 3,
+      "path": "C:\\Users\\ASUS\\Documents\\deepseek-harness\\default-workspace\\crystal-trail\\build\\report-preview\\page-0003.png",
+      "width": 935,
+      "height": 1210,
+      "rectangle": {
+        "x": 0,
+        "y": 0,
+        "width": 816,
+        "height": 1056
+      },
+      "byteLength": 209606
+    },
+    {
+      "index": 4,
+      "page": 5,
+      "path": "C:\\Users\\ASUS\\Documents\\deepseek-harness\\default-workspace\\crystal-trail\\build\\report-preview\\page-0004.png",
+      "width": 935,
+      "height": 1210,
+      "rectangle": {
+        "x": 0,
+        "y": 0,
+        "width": 816,
+        "height": 1056
+      },
+      "byteLength": 84598
+    }
+  ],
+  "missingFonts": [
+    "Courier"
+  ]
+}

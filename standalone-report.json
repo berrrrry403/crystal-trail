@@ -1,0 +1,27 @@
+{
+ "file": "C:\\Users\\ASUS\\Documents\\deepseek-harness\\default-workspace\\crystal-trail\\dist\\晶途拾光.html",
+ "bytes": 945986,
+ "scripts": 28,
+ "checks": [
+  {
+   "name": "无外部 script src",
+   "ok": true
+  },
+  {
+   "name": "无 fetch(",
+   "ok": true
+  },
+  {
+   "name": "无 type=\"module\"",
+   "ok": true
+  },
+  {
+   "name": "图标已内联",
+   "ok": true
+  },
+  {
+   "name": "无 http(s) 外链引用",
+   "ok": true
+  }
+ ]
+}
